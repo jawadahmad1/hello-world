@@ -48,6 +48,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'CloudCAngular'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8f9667127f3e4022a9d9a9d3f49319f0 }}
-        package: .
+        package: ./dist/hello-world
