@@ -1,0 +1,59 @@
+<p>Register a new user</p>
+<form #User="ngForm" (ngSubmit)="submit(User)">
+    <div class="form-group">
+
+        <input id="loginName" name="loginName" ngModel type="text" class="form-control" placeholder="Login Name VARCHAR">
+    </div>
+
+     <div class="form-group">
+
+        <input id="Password" name="Password" ngModel type="text" class="form-control" placeholder="Password VARCHAR">
+    </div>
+    <div class="form-group">
+
+        <input id="AuthLvlID"  name="AuthLvlID" ngModel type="number" class="form-control" placeholder="Auth Level ID int">
+    </div>
+    <div class="form-group">
+
+        <input id="UserTypeID" name="UserTypeID" ngModel type="number" class="form-control" placeholder="User Type ID int">
+    </div>
+    <div class="form-group">
+
+        <input id="CurrencyTypeID" name="CurrencyTypeID" ngModel type="number" class="form-control" placeholder="Currency Type Id int">
+    </div>
+    
+    
+    <div class="form-group">
+    <input id="FirstName" name="FirstName" ngModel type="text" class="form-control" placeholder="First Name VARCHAR">
+    </div>
+    <div class="form-group">
+        <input id="LastName" name="LastName" ngModel type="text" class="form-control" placeholder="Last Name VARCHAR">
+    </div>
+    <div class="form-group">
+        <input id="UserDesc" name="UserDesc" ngModel type="text" class="form-control" placeholder="Description VARCHAR">
+    </div>
+    <div class="form-group">
+        <label >Male</label>
+        <input type="radio" name="Gendor" ngModel  [value]="true" >
+        &nbsp;
+        <label >Female</label>
+        <input type="radio" name="Gendor" ngModel  [value]="false" >
+    
+    </div>
+    <div class="form-group">
+        <input id="InternalScore" name="InternalScore" ngModel type="number" class="form-control" placeholder="Internal Score INT">
+    </div>
+    <!--
+    <div class="form-group">
+        <input [hidden]="true" id="VendorID" name="VendorID" ngModel type="text" class="form-control" placeholder="VendorId">
+    </div>
+-->
+    <div class="form-group">
+
+        <input id="Suspicious" name="Suspicious" ngModel type="number" class="form-control" placeholder="Suspicious INT">
+        &nbsp;
+    </div>
+
+
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>

@@ -1,0 +1,77 @@
+<button [routerLink]="['/userregistration']">User Registration</button>
+
+<p>Select City & CategoryType</p>
+
+
+
+<div>
+    <select (change)="selectOption($event.target.value)">
+    <option [value]="Cities.cityID" *ngFor="let Cities of Cities">{{Cities.cityName}}</option>
+     </select>
+     &nbsp;
+     <select (change)="selectOptionCategorySelected($event.target.value)">
+        <option [value]="CategoryTypes.categoryTypeID" *ngFor="let CategoryTypes of CategoryTypes">{{CategoryTypes.categoryTypeName}}</option>
+         </select>
+  </div> 
+  <br>
+  <button (click)="selectOptioncall(Cityselected,CategoryTypeselected)">Search</button>
+
+  <!--<p>City Id is :{{Cityselected}}</p>
+  <p>Category Type Id is :{{CategoryTypeselected}}</p>
+  -->
+
+<div *ngIf="show">
+<div *ngIf="coount>0;else elseBlock"> 
+  <ul class="list-group">
+    <li *ngFor="let gvbcity of gvbcity" class="list-group-item" >
+      <!-- <button>{{gvbcity.companyName}}</button> -->
+      
+        Comapny Name : <a  [routerLink]="['/vendorsdetail',gvbcity.vendorID,CategoryTypeselected,Cityselected]" >{{gvbcity.companyName}}</a>
+        <br>
+        Company Description : {{gvbcity.companyDesc}}
+        <br>
+<!--         
+        Featured : {{gvbcity.featured}}
+        routerlink
+        <br>
+        Internal Score : {{gvbcity.internalScore}}
+        <br>
+        Suspicious : {{gvbcity.suspicious}}
+        <br>
+        City : {{gvbcity.cityName}}
+        <br>
+        Category Type : {{gvbcity.categoryTypeName}}
+        <br>
+        Address Description : {{gvbcity.addressDesc}}
+        <br>
+        Floor : {{gvbcity.floor}}
+        <br>
+        Latitude : {{gvbcity.latitude}}
+        <br>
+        Longitude : {{gvbcity.longitude}}
+        <br>
+        Office : {{gvbcity.office}}
+        <br>
+        Room : {{gvbcity.room}}
+        <br>
+        Address Number : {{gvbcity.addressNumber}}
+        <br>
+        Block : {{gvbcity.blockName}}
+        <br>
+        Colony : {{gvbcity.colonyName}}
+        <br>
+        Country : {{gvbcity.countryName}}
+        <br>
+        Province : {{gvbcity.stateOrProvinceName}}
+        <br>
+        Street : {{gvbcity.streetName}}
+        <br>
+        Zip Code : {{gvbcity.zipCode}}
+        <br> -->
+        &nbsp;
+    </li>
+
+</ul>
+</div>
+<ng-template #elseBlock>&nbsp;&nbsp;No Record Found</ng-template>
+</div>
